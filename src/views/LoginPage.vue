@@ -9,7 +9,8 @@
             <input id="password" v-model="password" type="password" placeholder="Password">
         </div>
 
-        <button @click="logUserIn" class="bg-green-500 mt-4 px-4 py-2 hover:bg-green800 hover:text-white">LOGIN</button>
+        <button @click="logUserIn"
+            class="bg-green-500 mt-4 px-4 py-2 hover:bg-green-800 hover:text-white">LOGIN</button>
 
 
     </form>

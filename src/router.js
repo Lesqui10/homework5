@@ -4,8 +4,10 @@ import HomePage from '@/views/HomePage.vue'
 import CardDetails from './views/CardDetails.vue'
 import LoginPage from './views/LoginPage.vue'
 import SettingsPage from './views/SettingsPage.vue'
+//import { useAuth } from '@vueuse/firebase'
+//import { useAttrs } from 'vue'
 
-export { useAuth } from './composables/useAuth'
+import { useAuth } from './composables/useAuth'
 const { isAuthenticated } = useAuth()
 
 const routes = [
@@ -25,9 +27,9 @@ const router = createRouter({
 router.beforeEach((to, _, next) => {
   if (to.meta.requiresAuth && !isAuthenticated.value) {
     next({ name: 'LoginPage', query: { redirect: to.fullPath } })
-  }
-  else {
+  } else {
     next()
   }
 })
+
 export default router
